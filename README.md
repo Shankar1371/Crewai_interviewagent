@@ -6,6 +6,11 @@ The main purpose of this project is to understand how to build multi-agent workf
 
 This project is not a finished product yet. It is part of my learning journey as I practice building AI agents, connecting external APIs, designing agent workflows, and understanding how different agents can work together to complete a task.
 
+## Workflow Diagram
+
+<img width="1768" height="890" alt="impp crew ai" src="https://github.com/user-attachments/assets/41dd0bd6-50dc-422e-8967-589b234d591c" />
+
+
 ## Project Purpose
 
 I started this project to learn how AI agents can be used for interview preparation.
@@ -24,8 +29,8 @@ Through this project, I am learning:
 - How to organize agents into a workflow
 - How to generate interview questions based on company and role information
 - How to provide feedback on user answers
-- How to structure an AI agent project in Python
 - How to manage API keys using environment variables
+- How to develop and test AI agent workflows in Google Colab
 
 ## Tech Stack
 
@@ -33,7 +38,16 @@ Through this project, I am learning:
 - CrewAI
 - Serper API
 - OpenAI API or another LLM provider
+- Google Colab
 - python-dotenv for environment variables
+
+## Current Development Environment
+
+This project is currently being developed in Google Colab.
+
+I am using Google Colab because it allows me to quickly test Python code, install required packages, experiment with CrewAI agents, and run the workflow without setting up a full local development environment yet.
+
+As the project grows, I may later move the code into a more structured local project or web application.
 
 ## Current Project Idea
 
@@ -53,12 +67,19 @@ Based on these inputs, the AI agents will perform research, generate interview q
 ## Planned Workflow
 
 1. User provides interview preparation details.
+
 2. CrewAI initializes different AI agents.
+
 3. A research agent collects company-related information using Serper API.
+
 4. An interviewer research agent looks for publicly available interviewer background information if provided.
+
 5. A question generation agent creates interview questions based on the role and research.
+
 6. The user answers the questions.
+
 7. A feedback agent reviews the answers and gives improvement suggestions.
+
 8. The user can improve the answers through an iterative feedback process.
 
 ## AI Agents
@@ -95,89 +116,26 @@ An LLM API is used to generate responses, questions, summaries, and feedback.
 
 ## Environment Variables
 
-Create a `.env` file in the root folder and add your API keys:
+The project requires API keys to run.
+
+Example environment variables:
 
 ```env
 SERPER_API_KEY=your_serper_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-Do not commit your `.env` file to GitHub.
+Running in Google Colab
 
-## Installation
+Since this project is currently being developed in Google Colab, the basic workflow is:
 
-Clone the repository:
-
-```bash
-git clone https://github.com/Shankar1371/Crewai_interviewagent.git
-```
-
-Move into the project folder:
-
-```bash
-cd Crewai_interviewagent
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv venv
-```
-
-Activate the virtual environment:
-
-For Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-For macOS/Linux:
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Run the Project
-
-```bash
-python main.py
-```
-
-## Planned Project Structure
-
-```text
-Crewai_interviewagent/
-|
-├── agents/
-│   ├── research_agent.py
-│   ├── interviewer_agent.py
-│   ├── question_agent.py
-│   ├── coach_agent.py
-│   └── feedback_agent.py
-|
-├── tasks/
-│   ├── research_tasks.py
-│   ├── interview_tasks.py
-│   └── feedback_tasks.py
-|
-├── tools/
-│   └── serper_tool.py
-|
-├── main.py
-├── requirements.txt
-├── .env
-├── .gitignore
-└── README.md
-```
-
-## Current Status
+Open the Colab notebook.
+Install the required packages.
+!pip install crewai crewai-tools python-dotenv
+Add the required API keys securely.
+Define the agents, tasks, and crew.
+Run the workflow and test the agent outputs.
+Current Status
 
 This project is currently in the learning and development stage.
 
@@ -185,36 +143,36 @@ I am not presenting this as a completed product. I am using this project to prac
 
 Current progress:
 
-- Designed the basic interview preparation workflow
-- Planned multiple AI agent responsibilities
-- Started working with CrewAI
-- Integrated or planning to integrate Serper API for research
-- Working on agent task execution and response generation
-
-## Future Improvements
+Designed the basic interview preparation workflow
+Planned multiple AI agent responsibilities
+Started working with CrewAI
+Using Google Colab for development and testing
+Integrated or planning to integrate Serper API for research
+Working on agent task execution and response generation
+Future Improvements
 
 Planned improvements include:
 
-- Better question generation
-- Answer scoring system
-- More detailed feedback
-- Resume-based interview preparation
-- Job description parsing
-- PDF report generation
-- Simple web interface
-- Voice-based mock interview support
-- Interview history tracking
-
-## Learning Goal
+Better question generation
+Answer scoring system
+More detailed feedback
+Resume-based interview preparation
+Job description parsing
+PDF report generation
+Simple web interface
+Voice-based mock interview support
+Interview history tracking
+Moving from Google Colab to a structured application
+Learning Goal
 
 The main goal of this project is to improve my understanding of AI agents by building a practical project.
 
 This project helps me learn how to break a problem into multiple agent tasks, connect APIs, manage workflows, and develop a useful AI-based interview preparation assistant step by step.
 
-## Author
+Author
 
 Sankar Punati
 
-## License
+License
 
 This project is for learning and portfolio purposes.
